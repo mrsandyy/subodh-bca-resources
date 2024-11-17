@@ -667,7 +667,7 @@ It follows an `if` statement, and if the `if` condition is `False`, the program 
       # Code to execute if no condition is True
   ```
 
-### 4.4 Nested if Statements:
+### 4.4 Nested if Statements
 
 You can also have conditional statements inside other conditional statements, which is called nesting.
 
@@ -742,7 +742,7 @@ The `while` loop executes a block of code as long as a condition is `True`. The 
   print(f"Thank you! You entered: {number}")
   ```
 
-### 5.3 Nested Loops:
+### 5.3 Nested Loops
 
 You can place loops inside other loops, which is known as a **nested loop**. This is useful when you need to iterate over multiple sequences or perform complex iteration.
 
