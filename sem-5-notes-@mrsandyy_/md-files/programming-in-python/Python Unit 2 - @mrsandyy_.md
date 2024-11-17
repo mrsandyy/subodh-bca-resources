@@ -12,7 +12,9 @@ A list in Python is a collection of items that are **ordered**, **mutable** (can
 - **Dynamic**: Lists in Python can grow or shrink dynamically as you add or remove elements.
 - **Indexed**: Each element in a list can be accessed using its index, starting from `0` for the first element.
 
-### 1.2 Creating a List
+### 1.2 Working with Lists
+
+#### 1.2.1 Creating a List
 
 You can create a list by placing a comma-separated sequence of elements inside square brackets.
 
@@ -25,7 +27,7 @@ mixed = [1, "hello", 3.14, True]  # A mixed data type list
 nested_list = [[1, 2], [3, 4]]  # A nested list
 ```
 
-### 1.3 Accessing Elements
+#### 1.2.2 Accessing Elements
 
 You can access list elements using their index. Negative indexing allows you to access elements from the end of the list.
 
@@ -36,11 +38,7 @@ print(fruits[0])  # Output: apple (first element)
 print(fruits[-1]) # Output: cherry (last element)
 ```
 
-### 1.4 Modifying a List
-
-Since lists are mutable, you can modify their contents.
-
-#### 1.4.1 Adding Elements:
+#### 1.2.3 Adding Elements
 
 - **`append()`**: Adds a single element to the end.
 - **`extend()`**: Adds multiple elements to the end.
@@ -53,7 +51,7 @@ numbers.extend([5, 6])    # [1, 2, 3, 4, 5, 6]
 numbers.insert(2, 99)     # [1, 2, 99, 3, 4, 5, 6]
 ```
 
-#### 1.4.2 Removing Elements:
+#### 1.2.4 Removing Elements
 
 - **`remove()`**: Removes the first occurrence of a specific value.
 - **`pop()`**: Removes an element at a specified index (or the last element if no index is provided).
@@ -67,7 +65,7 @@ numbers.pop(1)       # [1, 4] (removes element at index 1)
 numbers.clear()      # [] (empty list)
 ```
 
-### 1.5 List Built-in Methods
+### 1.3 List Built-in Methods
 
 | **Method**                      | **Description**                                                                                   | **Example**                                                 |
 | ------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
@@ -90,9 +88,9 @@ numbers.sort()        # [3, 5, 8, 10]
 print(numbers.pop())  # Output: 10
 ```
 
-#### 1.5.1 Special Features of Lists
+#### 1.3.1 Special Features of Lists
 
-- **Slicing**: Extract sublists. Extract a portion of a sequence (like a list or string) using indices. It's done using the colon (:) operator.
+- **Slicing**: Extract a portion of a sequence (like a list or string) using indices. It's done using the colon (:) operator.
 
 ```python
 nums = [10, 20, 30, 40, 50]
@@ -107,49 +105,118 @@ print(nums[-1])  # Output: 50
 
 ## 2. Tuples
 
-#### Tuple Operators and Built-in Functions
+Tuples are a type of **sequence data structure** that are used to store collections of items. Unlike lists, tuples are **immutable**, meaning their contents cannot be changed after creation.
 
-Tuples are immutable sequences in Python.
+### 2.1 Key Features of Tuples
+
+- **Immutable**: Once a tuple is created, you cannot add, remove, or modify its elements.
+- **Ordered**: Elements in a tuple maintain their order.
+- **Allows duplicates**: Tuples can contain duplicate elements.
+- **Can hold multiple data types**: A tuple can store a mix of integers, strings, lists, other tuples, etc.
+- **Parentheses `()`**: Tuples are defined using parentheses, although commas (`,`) are the actual tuple separators.
+
+### 2.2 Tuple Operators
+
+#### 2.2.1 Creating Tuples
+
+You can create a tuple using parentheses `()` or the `tuple()` constructor.
 
 ```python
 # Example of tuple creation
-coordinates = (10, 20, 30)
+t1 = (1, 2, 3)
+t2 = tuple([4, 5, 6])  # Using the tuple() constructor
 ```
 
-- **Operators**:
-  - Concatenation: `+`
-  - Repetition: `*`
+#### 2.2.2 Accessing Elements
+
+You can access elements using indexing and slicing.
+
+- **Indexing:** Retrieves a single element.
+- **Slicing:** Retrieves a sub-part of the tuple.
 
 ```python
-a = (1, 2)
-b = (3, 4)
-print(a + b)  # Output: (1, 2, 3, 4)
-print(a * 2)  # Output: (1, 2, 1, 2)
+t = (10, 20, 30, 40, 50)
+
+# Accessing elements by index
+print(t[0])  # Output: 10
+print(t[-1]) # Output: 50
+
+# Accessing a range of elements (slicing)
+print(t[1:4])  # Output: (20, 30, 40)
 ```
 
-- **Built-in Functions**:
-  - `len(tuple)`: Returns the number of elements.
-  - `max(tuple)`: Returns the largest element.
-  - `min(tuple)`: Returns the smallest element.
-  - `tuple(iterable)`: Converts an iterable to a tuple.
+#### 2.2.3 Concatenation ( `+` )
+
+Tuples can be combined using the `+` operator.
 
 ```python
-nums = (5, 10, 15)
-print(len(nums))  # Output: 3
+t1 = (1, 2)
+t2 = (3, 4)
+print(t1 + t2)  # Output: (1, 2, 3, 4)
 ```
 
-#### Special Features of Tuples
+#### 2.2.4 Repetition ( `*` )
 
-- Can be used as keys in dictionaries because they are hashable.
-- Packing and unpacking:
+You can repeat tuples using the `*` operator.
 
 ```python
-# Tuple packing
-point = 3, 4
-# Tuple unpacking
-x, y = point
-print(x, y)  # Output: 3 4
+print(t1 * 2)   # Output: (1, 2, 1, 2)
 ```
+
+#### 2.2.5 Membership Testing
+
+Check if an item exists in a tuple using the `in` or `not in` operators.
+
+```python
+print(2 in t1)  # Output: True
+print(5 not in t2) # Output: True
+```
+
+#### 2.2.6 Iterating Through Tuples
+
+You can iterate through a tuple using a `for` loop.
+
+```python
+for item in t1:
+    print(item)
+```
+
+### 2.3 Tuples Built-in Functions
+
+| **Function**  | **Description**                                                                                 | **Example**                        | **Output**                       |
+| ------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------------------- |
+| `len()`       | Returns the number of elements in the tuple.                                                    | `len((1, 2, 3))`                   | `3`                              |
+| `max()`       | Returns the maximum value in the tuple.                                                         | `max((10, 20, 30))`                | `30`                             |
+| `min()`       | Returns the minimum value in the tuple.                                                         | `min((10, 20, 30))`                | `10`                             |
+| `sum()`       | Returns the sum of all elements in the tuple (only for numeric elements).                       | `sum((1, 2, 3))`                   | `6`                              |
+| `sorted()`    | Returns a sorted list of the tuple elements (does not modify the original tuple).               | `sorted((3, 1, 2))`                | `[1, 2, 3]`                      |
+| `tuple()`     | Converts an iterable (like a list, string, or range) into a tuple.                              | `tuple([1, 2, 3])`                 | `(1, 2, 3)`                      |
+| `all()`       | Returns `True` if all elements in the tuple are `True` (or the tuple is empty).                 | `all((True, 1, "text"))`           | `True`                           |
+| `any()`       | Returns `True` if at least one element in the tuple is `True`.                                  | `any((False, 0, "text"))`          | `True`                           |
+| `enumerate()` | Returns an enumerate object that yields pairs of index and value for each element in the tuple. | `list(enumerate(("a", "b", "c")))` | `[(0, 'a'), (1, 'b'), (2, 'c')]` |
+| `reversed()`  | Returns a reverse iterator for the tuple.                                                       | `tuple(reversed((1, 2, 3)))`       | `(3, 2, 1)`                      |
+| `zip()`       | Combines elements from multiple iterables into tuples.                                          | `list(zip((1, 2), ('a', 'b')))`    | `[(1, 'a'), (2, 'b')]`           |
+
+#### Notes:
+
+- These functions do not modify the tuple itself since tuples are immutable.
+- Some functions (e.g., `max`, `min`, `sum`) are applicable only if all elements in the tuple are numeric or comparable.
+
+### 2.4 Special Features of Tuples
+
+| Feature                        | Description                                                                       |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| **Immutability**               | Tuples cannot be modified after creation, ensuring data integrity.                |
+| **Faster Than Lists**          | Tuples are faster due to immutability and fixed size.                             |
+| **Hashable**                   | Can be used as keys in dictionaries or elements in sets if elements are hashable. |
+| **Heterogeneous Data**         | Can store elements of different data types.                                       |
+| **Nested Tuples**              | Support for multi-level tuples.                                                   |
+| **Memory Efficient**           | Consume less memory compared to lists.                                            |
+| **Packing & Unpacking**        | Group multiple values or assign tuple elements to variables.                      |
+| **Basic Operations**           | Support indexing, slicing, concatenation, repetition, and membership testing.     |
+| **Readability**                | Often used to return multiple values from functions.                              |
+| **Immutable Constants**        | Ideal for storing fixed, unchanging data.                                         |
+| **Lexicographical Comparison** | Can be compared based on element order.                                           |
 
 ## 3. Dictionaries
 
