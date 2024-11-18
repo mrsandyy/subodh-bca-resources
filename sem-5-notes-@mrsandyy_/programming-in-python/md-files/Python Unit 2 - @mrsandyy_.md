@@ -220,53 +220,126 @@ for item in t1:
 
 ## 3. Dictionaries
 
-#### Introduction to Dictionaries
+A dictionary is a collection data type that stores data in key-value pairs. It is mutable, unordered (prior to Python 3.7), and allows for fast access, modification, and storage of data using unique keys.
 
-Dictionaries store data as key-value pairs, where keys must be unique and immutable.
+Dictionaries are often used to represent real-world data mappings, such as a telephone directory or a student database.
 
-```python
-# Example dictionary
-student = {"name": "John", "age": 20}
-print(student["name"])  # Output: John
-```
+### 3.1 Key Features of Dictionaries
 
-#### Built-in Functions
+1. **Key-Value Pairs:** Each element in a dictionary consists of a unique **key** and its corresponding **value**.
+   
+   - Example: `{"name": "Sandy", "age": 20}`
 
-- **`len(dict)`**: Returns the number of key-value pairs.
-- **`dict.keys()`**: Returns a view object of keys.
-- **`dict.values()`**: Returns a view object of values.
-- **`dict.items()`**: Returns a view object of key-value pairs.
+2. **Mutable:** You can modify the dictionary by adding, updating, or deleting elements.
 
-```python
-print(student.keys())   # Output: dict_keys(['name', 'age'])
-print(student.values()) # Output: dict_values(['John', 20])
-```
+3. **Keys Must Be Immutable:** Keys can be of types like strings, numbers, or tuples (if they contain only immutable elements), but not lists or other dictionaries.
 
-#### Built-in Methods
+4. **Unordered (Up to Python 3.6):** Dictionaries did not maintain the order of insertion before Python 3.7. From Python 3.7 onwards, dictionaries maintain insertion order.
 
-- **`get(key, default)`**: Returns the value for `key` or `default` if the key does not exist.
-- **`update(other_dict)`**: Merges another dictionary.
-- **`pop(key)`**: Removes and returns the value for `key`.
-- **`clear()`**: Removes all items.
+5. **Fast Lookups:** Values can be quickly retrieved by referencing their keys.
+
+### 3.2 Working with Dictionaries
+
+#### 3.2.1 Creating a Dictionary
+
+You can create a dictionary using curly braces `{}` or the `dict()` constructor.
 
 ```python
-student.update({"grade": "A"})
-print(student)  # {'name': 'John', 'age': 20, 'grade': 'A'}
+# Using curly braces
+student = {"name": "Sandy", "age": 20, "course": "BCA"}
+
+# Using dict() constructor
+info = dict(name="Sandy", age=20, course="BCA")
 ```
 
-#### Dictionary Keys
+#### 3.2.2 Accessing Elements
 
-Keys must be:
-
-- Unique
-- Immutable types (e.g., strings, numbers, tuples)
+Values in a dictionary can be accessed using their keys.
 
 ```python
-# Valid keys
-d = {1: "one", (2, 3): "tuple"}
+# Accessing values
+print(student["name"])  # Output: Sandy
+
+# Using the get() method (avoids KeyError if key doesn't exist)
+print(student.get("age"))  # Output: 20
+print(student.get("grade", "Not Assigned"))  # Output: Not Assigned
 ```
 
-## 4. Sets
+#### 3.2.3 Modifying a Dictionary
+
+You can add, update, or delete key-value pairs.
+
+```python
+# Adding a new key-value pair
+student["grade"] = "A"
+print(student)  # Output: {'name': 'Sandy', 'age': 20, 'course': 'BCA', 'grade': 'A'}
+
+# Updating an existing key-value pair
+student["age"] = 22
+print(student)  # Output: {'name': 'Sandy', 'age': 22, 'course': 'BCA', 'grade': 'A'}
+
+# Removing a key-value pair
+del student["course"]
+print(student)  # Output: {'name': 'Sandy', 'age': 22, 'grade': 'A'}
+
+# Using pop() method
+grade = student.pop("grade")
+print(grade)  # Output: A
+print(student)  # Output: {'name': 'Sandy', 'age': 22}
+```
+
+### 3.3 Built-in Functions for Dictionaries
+
+These functions can be applied to dictionaries.
+
+| **Function**   | **Description**                                          | **Example**                  | **Output**         |
+| -------------- | -------------------------------------------------------- | ---------------------------- | ------------------ |
+| `len(dict)`    | Returns the number of key-value pairs in the dictionary. | `len({"a": 1, "b": 2})`      | `2`                |
+| `max(dict)`    | Returns the largest key (based on comparison).           | `max({"a": 1, "b": 2})`      | `'b'`              |
+| `min(dict)`    | Returns the smallest key (based on comparison).          | `min({"a": 1, "b": 2})`      | `'a'`              |
+| `sorted(dict)` | Returns a sorted list of the keys.                       | `sorted({"b": 1, "a": 2})`   | `['a', 'b']`       |
+| `dict()`       | Creates a new dictionary.                                | `dict([("a", 1), ("b", 2)])` | `{'a': 1, 'b': 2}` |
+
+### 3.4 Built-in Methods for Dictionaries
+
+These methods are specifically designed for dictionary objects.
+
+| **Method**                         | **Description**                                                                                           | **Example**                    | **Output**                                      |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------ | ----------------------------------------------- |
+| `dict.keys()`                      | Returns a view object containing all keys in the dictionary.                                              | `{"a": 1, "b": 2}.keys()`      | `dict_keys(['a', 'b'])`                         |
+| `dict.values()`                    | Returns a view object containing all values in the dictionary.                                            | `{"a": 1, "b": 2}.values()`    | `dict_values([1, 2])`                           |
+| `dict.items()`                     | Returns a view object of key-value pairs as tuples.                                                       | `{"a": 1, "b": 2}.items()`     | `dict_items([('a', 1), ('b', 2)])`              |
+| `dict.get(key[, default])`         | Returns the value associated with the key; if the key doesn't exist, returns the specified default value. | `{"a": 1}.get("b", 0)`         | `0`                                             |
+| `dict.update(other)`               | Updates the dictionary with key-value pairs from another dictionary or an iterable of pairs.              | `{"a": 1}.update({"b": 2})`    | `{'a': 1, 'b': 2}`                              |
+| `dict.pop(key[, default])`         | Removes the key and returns its value; if the key doesn't exist, returns the default value.               | `{"a": 1}.pop("a")`            | `1`                                             |
+| `dict.popitem()`                   | Removes and returns the last inserted key-value pair (from Python 3.7+).                                  | `{"a": 1, "b": 2}.popitem()`   | `('b', 2)`                                      |
+| `dict.clear()`                     | Removes all key-value pairs from the dictionary.                                                          | `{"a": 1, "b": 2}.clear()`     | `{}`                                            |
+| `dict.copy()`                      | Returns a shallow copy of the dictionary.                                                                 | `{"a": 1, "b": 2}.copy()`      | `{'a': 1, 'b': 2}`                              |
+| `dict.fromkeys(iterable[, value])` | Creates a new dictionary with keys from the iterable and values set to the specified value.               | `dict.fromkeys(["a", "b"], 0)` | `{'a': 0, 'b': 0}`                              |
+| `dict.setdefault(key[, default])`  | Returns the value of the key if it exists; if not, inserts the key with the default value and returns it. | `{"a": 1}.setdefault("b", 2)`  | `2` (and dictionary becomes `{'a': 1, 'b': 2}`) |
+
+### 3.5 Dictionary Keys
+
+Dictionary keys are the identifiers used to access values in a dictionary. They are unique, immutable, and serve as the primary way to organize and retrieve data in a dictionary.
+
+#### 3.5.1 Key Properties
+
+| **Property**         | **Description**                                                                   |
+| -------------------- | --------------------------------------------------------------------------------- |
+| **Uniqueness**       | Duplicate keys are not allowed; the latest value replaces the old one.            |
+| **Immutable Types**  | Keys must be of immutable types like strings, numbers, or tuples.                 |
+| **Fast Lookup**      | Keys enable fast value retrieval using hash-based lookups.                        |
+| **Case Sensitivity** | Keys are case-sensitive (e.g., `"key"` and `"KEY"` are different keys).## 4. Sets |
+
+#### 3.5.2 Creating Keys
+
+Keys can be of various immutable data types:
+
+```python
+
+```
+
+
 
 #### Introduction to Sets
 
