@@ -226,17 +226,17 @@ Dictionaries are often used to represent real-world data mappings, such as a tel
 
 ### 3.1 Key Features of Dictionaries
 
-1. **Key-Value Pairs:** Each element in a dictionary consists of a unique **key** and its corresponding **value**.
-   
-   - Example: `{"name": "Sandy", "age": 20}`
+- **Key-Value Pairs:** Each element in a dictionary consists of a unique **key** and its corresponding **value**.
+  
+  - Example: `{"name": "Sandy", "age": 20}`
 
-2. **Mutable:** You can modify the dictionary by adding, updating, or deleting elements.
+- **Mutable:** You can modify the dictionary by adding, updating, or deleting elements.
 
-3. **Keys Must Be Immutable:** Keys can be of types like strings, numbers, or tuples (if they contain only immutable elements), but not lists or other dictionaries.
+- **Keys Must Be Immutable:** Keys can be of types like strings, numbers, or tuples (if they contain only immutable elements), but not lists or other dictionaries.
 
-4. **Unordered (Up to Python 3.6):** Dictionaries did not maintain the order of insertion before Python 3.7. From Python 3.7 onwards, dictionaries maintain insertion order.
+- **Unordered (Up to Python 3.6):** Dictionaries did not maintain the order of insertion before Python 3.7. From Python 3.7 onwards, dictionaries maintain insertion order.
 
-5. **Fast Lookups:** Values can be quickly retrieved by referencing their keys.
+- **Fast Lookups:** Values can be quickly retrieved by referencing their keys.
 
 ### 3.2 Working with Dictionaries
 
@@ -336,53 +336,235 @@ Dictionary keys are the identifiers used to access values in a dictionary. They 
 Keys can be of various immutable data types:
 
 ```python
+# String keys
+string_key_dict = {"name": "Sandy"}
+
+# Numeric keys
+numeric_key_dict = {1: "one", 2: "two"}
+
+# Tuple keys
+tuple_key_dict = {(1, 2): "coordinates"}
 
 ```
 
+## 4. Sets in Python
 
+A **set** is an unordered, mutable collection of unique elements. It is defined using curly braces `{}` or the built-in `set()` function.
 
-#### Introduction to Sets
+They are commonly used to store distinct values and perform mathematical set operations like union, intersection, and difference. 
 
-Sets are unordered collections of unique elements.
+### 4.1 Characteristics of Sets
+
+- **Unordered**: Elements do not maintain a specific order.
+- **Unique**: Duplicate elements are not allowed.
+- **Mutable**: You can add or remove items from a set, but the elements themselves must be immutable (e.g., numbers, strings, tuples).
+
+### 4.2 Working with Sets
+
+#### 4.2.1 Creating Sets
+
+- Using curly braces:
+  
+  ```python
+  my_set = {1, 2, 3, 4}
+  print(my_set)  # Output: {1, 2, 3, 4}
+  ```
+
+- Using the `set()` constructor:
+  
+  ```python
+  my_set = set([1, 2, 3, 4])
+  print(my_set)  # Output: {1, 2, 3, 4}
+  ```
+
+- Creating an empty set:
+  
+  ```python
+  empty_set = set()  # Correct way
+  ```
+
+#### 4.2.2 Adding Elements
+
+Use `add()` to add a single element.
 
 ```python
-# Example of a set
-numbers = {1, 2, 3, 3}
-print(numbers)  # Output: {1, 2, 3}
+my_set = {1, 2, 3}
+my_set.add(4)
+print(my_set)  # Output: {1, 2, 3, 4}
 ```
 
-#### Comparing Sets
+#### 4.2.3 Removing Elements
 
-- **Subset**: `<=`
-- **Superset**: `>=`
-- **Equality**: `==`
+- `remove()` raises an error if the item does not exist.
+
+- `discard()` does not raise an error if the item is absent.
+  
+  ```python
+  my_set = {1, 2, 3}
+  my_set.remove(2)  # Removes 2
+  my_set.discard(5)  # Does nothing
+  ```
+
+- `pop()` removes and returns an arbitrary element.
+  
+  ```python
+  my_set.pop()
+  print(my_set)  # Output: {2, 3} (arbitrary removal)
+  ```
+
+- `clear()` removes all elements.
+  
+  ```python
+  my_set.clear()
+  print(my_set)  # Output: set()
+  ```
+
+### 4.3 Common Set Methods
+
+| **Method**                  | **Description**                                                                  | **Example**                                                              |
+| --------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `add(element)`              | Adds a single element to the set.                                                | `s = {1, 2}; s.add(3)` → `{1, 2, 3}`                                     |
+| `update(iterable)`          | Adds multiple elements (from an iterable) to the set.                            | `s = {1, 2}; s.update([3, 4])` → `{1, 2, 3, 4}`                          |
+| `remove(element)`           | Removes the specified element; raises `KeyError` if the element is not found.    | `s = {1, 2, 3}; s.remove(2)` → `{1, 3}`                                  |
+| `discard(element)`          | Removes the specified element without error if it’s not found.                   | `s = {1, 2}; s.discard(3)` → `{1, 2}`                                    |
+| `pop()`                     | Removes and returns an arbitrary element; raises `KeyError` if the set is empty. | `s = {1, 2, 3}; s.pop()` → Remaining elements: `{2, 3}`                  |
+| `clear()`                   | Removes all elements from the set.                                               | `s = {1, 2, 3}; s.clear()` → `set()`                                     |
+| `union(set)`                | Returns a new set containing all elements from both sets.                        | `s1 = {1, 2}; s2 = {3, 4}; s1.union(s2)` → `{1, 2, 3, 4}`                |
+| `intersection(set)`         | Returns a new set with elements common to both sets.                             | `s1 = {1, 2, 3}; s2 = {2, 3, 4}; s1.intersection(s2)` → `{2, 3}`         |
+| `difference(set)`           | Returns a new set with elements in the first set but not in the second.          | `s1 = {1, 2, 3}; s2 = {2, 3, 4}; s1.difference(s2)` → `{1}`              |
+| `symmetric_difference(set)` | Returns a new set with elements in either set, but not both.                     | `s1 = {1, 2, 3}; s2 = {3, 4}; s1.symmetric_difference(s2)` → `{1, 2, 4}` |
+| `issubset(set)`             | Checks if the set is a subset of another.                                        | `s1 = {1, 2}; s2 = {1, 2, 3}; s1.issubset(s2)` → `True`                  |
+| `issuperset(set)`           | Checks if the set is a superset of another.                                      | `s1 = {1, 2, 3}; s2 = {1, 2}; s1.issuperset(s2)` → `True`                |
+| `isdisjoint(set)`           | Checks if two sets have no elements in common.                                   | `s1 = {1, 2}; s2 = {3, 4}; s1.isdisjoint(s2)` → `True`                   |
+| `copy()`                    | Returns a shallow copy of the set.                                               | `s1 = {1, 2, 3}; s2 = s1.copy()` → `s2` = `{1, 2, 3}`                    |
+
+### 4.4 Comparing Sets
+
+Sets can be compared using relational operators (`==`, `!=`, `<`, `>`, `<=`, `>=`).
+
+#### 4.4.1Equality (`==`)
+
+Checks if two sets have the same elements, regardless of order.
 
 ```python
-a = {1, 2}
-b = {1, 2, 3}
-print(a <= b)  # Output: True
+set1 = {1, 2, 3}
+set2 = {3, 2, 1}
+print(set1 == set2)  # True
 ```
 
-#### Mathematical Set Operations
+#### 4.4.2 Inequality (`!=`)
 
-- **Union**: `|` or `set.union()`
-- **Intersection**: `&` or `set.intersection()`
-- **Difference**: `-` or `set.difference()`
-- **Symmetric Difference**: `^` or `set.symmetric_difference()`
+Checks if two sets are not equal.
 
 ```python
-a = {1, 2, 3}
-b = {3, 4, 5}
-print(a | b)  # Output: {1, 2, 3, 4, 5}
-print(a & b)  # Output: {3}
+print(set1 != set2)  # False
 ```
 
-#### Set Comprehensions
+#### 4.4.3 Subset (`<`)
 
-Set comprehensions allow concise set creation.
+A set is a subset of another if all elements of the first set are in the second.
 
 ```python
-# Example: Set of squares
-squares = {x**2 for x in range(5)}
-print(squares)  # Output: {0, 1, 4, 9, 16}
+set1 = {1, 2}
+set2 = {1, 2, 3}
+print(set1 < set2)  # True
 ```
+
+#### 4.4.4 Superset (`>`)
+
+A set is a superset of another if it contains all elements of the second set.
+
+```python
+print(set2 > set1)  # True
+```
+
+#### 4.4.5 Disjoint (`isdisjoint()`)
+
+Two sets are disjoint if they have no elements in common.
+
+```python
+set1 = {1, 2, 3}
+set2 = {4, 5}
+print(set1.isdisjoint(set2))  # True
+```
+
+### 4.5 Mathematical Set Operations
+
+Python sets support operations like union, intersection, difference, and symmetric difference, similar to mathematical sets.
+
+- **Union (`|` or `union()`)**: Combines elements from both sets.
+  
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  print(set1 | set2)  # {1, 2, 3, 4, 5}
+  ```
+
+- **Intersection (`&` or `intersection()`)**: Finds common elements.
+  
+  ```python
+  print(set1 & set2)  # {3}
+  ```
+
+- **Difference (`-` or `difference()`)**: Elements in the first set but not in the second.
+  
+  ```python
+  print(set1 - set2)  # {1, 2}
+  ```
+
+- **Symmetric Difference (`^` or `symmetric_difference()`)**: Elements in either set but not both.
+  
+  ```python
+  print(set1 ^ set2)  # {1, 2, 4, 5}
+  ```
+
+### 4.6 Set Comprehensions
+
+Set Comprehensions in Python provide a concise way to create sets based on existing iterables (like lists, tuples, or other sets).
+
+A set comprehension has a similar syntax to list comprehensions but produces a `set` as the output.
+
+#### Syntax
+
+```python
+{expression for item in iterable if condition}
+```
+
+#### 4.6.1 Key Points:
+
+- **Set Properties**:
+  - A set does not allow duplicate values.
+  - The resulting set is unordered.
+- **Purpose**:
+  - To simplify the process of creating sets programmatically.
+  - To make the code more readable and concise.
+
+#### Example 1: Square of Numbers
+
+```python
+squared_set = {x**2 for x in range(5)}
+print(squared_set)  # Output: {0, 1, 4, 9, 16}
+```
+
+#### Example 2: Filtering with Conditions
+
+```python
+even_set = {x for x in range(10) if x % 2 == 0}
+print(even_set)  # Output: {0, 2, 4, 6, 8}
+```
+
+### 4.7 Use Cases of Sets
+
+- Removing duplicates from a list:
+  
+  ```python
+  my_list = [1, 2, 2, 3, 4, 4]
+  unique_set = set(my_list)
+  print(unique_set)  # {1, 2, 3, 4}
+  ```
+
+- Checking for common elements:
+  
+  ```python
+  print(bool(set1 & set2))  # True if they share any elements
+  ```
