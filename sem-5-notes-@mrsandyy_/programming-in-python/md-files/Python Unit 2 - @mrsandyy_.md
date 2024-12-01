@@ -344,7 +344,6 @@ numeric_key_dict = {1: "one", 2: "two"}
 
 # Tuple keys
 tuple_key_dict = {(1, 2): "coordinates"}
-
 ```
 
 ## 4. Sets in Python
