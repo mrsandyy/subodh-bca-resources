@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="github.css"> <!-- The GitHub CSS file -->
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header" style="position: fixed; width: 100%; top: 0; left: 0; padding: 10px; background: #f6f8fa;">
+        <div style="display: flex; justify-content: space-between; font-size: 12px;">
+            <!-- Left Header Section -->
+            <span>Left Header Text</span>
+
+            <!-- Center Header Section -->
+            <span style="text-align: center; flex-grow: 1;">Center Header</span>
+
+            <!-- Right Header Section with Hyperlink -->
+            <span style="text-align: right;">
+                <a href="https://mrsandy.in" style="color: #0366d6; text-decoration: none;">mrsandy.in</a>
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <main class="content" style="margin-top: 50px; padding: 20px;">
+        {{ content }}
+    </main>
+
+    <!-- Footer Section -->
+    <div class="footer" style="position: fixed; width: 100%; bottom: 0; padding: 10px; background: #f6f8fa;">
+        <div style="text-align: center; font-size: 12px;">
+            Page {{ page }} of {{ total_pages }}
+        </div>
+    </div>
+
+    <!-- Optional: Add a small script for page number management if needed (for WeasyPrint) -->
+    <script>
+        // Script can be added here if necessary for managing page numbers or other content
+    </script>
+</body>
+</html>
+
