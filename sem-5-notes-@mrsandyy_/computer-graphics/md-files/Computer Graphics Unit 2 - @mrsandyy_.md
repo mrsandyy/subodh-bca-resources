@@ -1,4 +1,4 @@
-### **UNIT-II: Raster Graphics Algorithms and Transformations
+# UNIT-II: Raster Graphics Algorithms and Transformations
 
 ---
 
@@ -560,5 +560,3 @@ Homogeneous coordinates extend the concept of homogeneous transformations to 3D 
   
   - Saves computational resources by applying a single transformation matrix instead of multiple operations.
   - Simplifies the manipulation of complex objects.
-
-
