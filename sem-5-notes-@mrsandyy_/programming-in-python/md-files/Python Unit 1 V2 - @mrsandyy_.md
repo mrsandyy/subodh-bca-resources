@@ -70,16 +70,19 @@ Python has other built-in data types, such as:
   ```python
   my_list = [1, 2, 3, "apple", True]
   ```
+
 - **Tuple:** Ordered, immutable collection of items.
   
   ```python
   my_tuple = (1, 2, 3, "banana")
   ```
+
 - **Set:** Unordered collection of unique items.
   
   ```python
   my_set = {1, 2, 3, "cherry"}
   ```
+
 - **Dictionary:** Unordered collection of key-value pairs.
   
   ```python
