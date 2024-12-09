@@ -1,0 +1,25 @@
+# Glossary of Key Terms
+
+- **Raster Graphics:** Images represented as a grid of pixels, where each pixel has a color value. Suitable for photorealistic images, but resolution-dependent.
+- **Vector Graphics:** Images represented using mathematical equations and geometric primitives. Resolution-independent, suitable for logos and illustrations.
+- **CRT Display:** Cathode Ray Tube display. A vacuum tube using electron beams to excite phosphor and create images.
+- **Frame Buffer:** A portion of memory that stores the color values for each pixel on the screen, representing the image to be displayed.
+- **Interlaced Scanning:** A display technique that draws alternate lines of the screen in two separate passes (odd and even fields), potentially leading to flickering.
+- **Non-Interlaced Scanning:** A display technique that draws all lines of the screen sequentially, eliminating flickering and providing a smoother image.
+- **RGB Color Model:** An additive color model where red, green, and blue light are combined to create various colors.
+- **CMYK Color Model:** A subtractive color model used in printing, where cyan, magenta, yellow, and black inks are combined to produce colors.
+- **DDA Algorithm:** Digital Differential Analyzer algorithm, a line-drawing algorithm that uses floating-point arithmetic to calculate pixel positions.
+- **Bresenham's Line Algorithm:** An efficient line-drawing algorithm that uses integer arithmetic to determine pixel positions.
+- **Midpoint Circle Algorithm:** An algorithm that utilizes symmetry and the midpoint principle to efficiently draw circles.
+- **Window:** A rectangular region in world coordinates representing the portion of the scene to be displayed.
+- **Viewport:** A rectangular region on the display device where the contents of the window are mapped.
+- **Clipping:** The process of removing portions of objects that lie outside a defined viewing area.
+- **Cohen-Sutherland Algorithm:** A line-clipping algorithm that uses region codes to determine line visibility against a rectangular window.
+- **Back-Face Detection:** A visible surface determination method that identifies and discards polygons facing away from the viewer.
+- **Depth Buffer (Z-buffer):** An image-space approach to visible surface determination that stores depth values for each pixel.
+- **Scan-Line Method:** A visible surface determination method that processes the scene one scan line at a time.
+- **Depth Sorting Method:** A visible surface determination method that sorts polygons based on their depth and renders them in back-to-front order.
+- **Anti-Aliasing:** Techniques to reduce the jagged or "staircase" appearance (aliasing) of lines and edges in computer graphics.
+- **Convolution:** A mathematical operation using a convolution kernel to modify image data, used for effects like blurring, sharpening, and edge detection.
+- **Thresholding:** A technique used in image segmentation that converts a grayscale image to a binary image based on a threshold value.
+- **Image Enhancement:** Techniques for improving the visual quality of an image, such as adjusting contrast, brightness, and sharpness.
