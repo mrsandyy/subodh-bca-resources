@@ -1,77 +1,68 @@
 # BCA Study Material Repository
 
-A comprehensive collection of study materials for Bachelor of Computer Applications curriculum at SS Jain Subodh PG College, structured by subjects and units. Available in both Markdown and PDF formats.
+A comprehensive collection of study materials for Bachelor of Computer Applications (BCA) curriculum at SS Jain Subodh PG College, covering all 6 semesters from multiple sources.
 
 > [!NOTE]
-> PDF versions of all units are available in the [pdfs](./pdfs) directory for convenient offline access and printing.
+> PDF versions of study materials are available in respective subject and semester directories.
 
-## 📚 Subjects Covered
-
-- [Computer Graphics](./computer-graphics)
-- [Programming in Python](./programming-in-python)
-- [.NET Technologies](./dotnet-technologies)
-- [Software Engineering](./software-engineering)
-
-> [!TIP]
-> Click on any subject above to directly navigate to its study material.
-
-## 📁 Repository Structure
+## 📚 Repository Structure
 
 ```
 study-material/
-├── computer-graphics/
-│   ├── unit1.md
-│   ├── unit2.md
-│   ├── unit3.md
-│   └── unit4.md
-├── programming-in-python/
-│   ├── unit1.md
-│   ├── unit2.md
-│   ├── unit3.md
-│   └── unit4.md
-├── dotnet-technologies/
-│   ├── unit1.md
-│   ├── unit2.md
-│   ├── unit3.md
-│   └── unit4.md
-├── software-engineering/
-│   ├── unit1.md
-│   ├── unit2.md
-│   ├── unit3.md
-│   └── unit4.md
-└── pdfs/                    # Contains PDF versions of all units
+├── Codechamp Notes/
+│   ├── Semester 1/
+│   │   ├── Subject 1/
+│   │   │   ├── Unit 1.pdf
+│   │   │   ├── Unit 2.pdf
+│   │   │   └── ...
+│   │   ├── Subject 2/
+│   │   └── ...
+│   ├── Semester 2/
+│   └── ...
+├── Sem 4 Notes/
+│   ├── Subject 1/
+│   │   ├── Unit 1.pdf
+│   │   ├── Unit 2.pdf
+│   │   └── ...
+│   └── ...
+├── Sem 5 Notes/
+│   ├── Subject 1/
+│   │   ├── Unit 1.pdf
+│   │   ├── Unit 2.pdf
+│   │   └── ...
+│   └── ...
+└── Syllabus.pdf
 ```
 
-## 📖 Content Format
+## 📖 Content Sources
 
-- **[Markdown Files](./)**: Unit-wise notes in Markdown format, viewable directly on GitHub
-- **[PDF Files](./pdfs)**: Downloadable PDF versions for offline access
-
-> [!IMPORTANT]
-> All content strictly follows the SS Jain Subodh PG College BCA curriculum and is regularly updated to match syllabus changes.
+- **Codechamp Notes**: Comprehensive notes from the Codechamp website
+- **Sem 4 Notes**: Curated study materials for 4th semester
+- **Sem 5 Notes**: Curated study materials for 5th semester
 
 ## 🎯 Purpose
 
-This repository digitizes the BCA curriculum materials with a focus on:
+This repository aims to:
+- Provide organized, semester-wise study materials
+- Offer resources from multiple sources
+- Facilitate easy access to BCA curriculum materials
+- Support student learning and revision
 
-- Organized subject and unit-wise content
-- Flexible access through both Markdown and PDF formats
-- Version-controlled educational content
-- Community-driven improvements and corrections
+## 📚 Coverage
+
+- Full 6-semester BCA curriculum
+- Multiple note sources
+- PDF format for easy accessibility
 
 ## 🤝 Contributing
 
-> [!TIP]
-> Before contributing, check if there's an existing issue or pull request addressing your concern.
-
 Contributions are welcome through:
-
 1. Issue reports for content errors or suggestions
 2. Pull requests for content improvements
-3. Additional resource suggestions
+3. Additional resource recommendations
 
 > [!CAUTION]
-> Please ensure any contributions align with the college curriculum and maintain the existing format structure.
+> Ensure contributions align with the college curriculum and maintain the existing format structure.
 
 ## ✨ Credits
 
