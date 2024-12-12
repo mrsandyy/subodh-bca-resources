@@ -67,19 +67,15 @@ numbers.clear()      # [] (empty list)
 
 ### 1.3 List Built-in Methods
 
-| **Method**                      | **Description**                                                                                   |
-| ------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `append(item)`                  | Adds an item to the end of the list.                                                              |
-| `extend(iterable)`              | Adds all elements of an iterable (e.g., another list) to the end of the list.                     |
-| `insert(index, item)`           | Inserts an item at the specified index.                                                           |
-| `remove(item)`                  | Removes the first occurrence of the specified item.                                               |
-| `pop(index=-1)`                 | Removes and returns the item at the specified index (default is the last item).                   |
-| `clear()`                       | Removes all items from the list.                                                                  |
-| `index(item, start, end)`       | Returns the index of the first occurrence of the item between optional `start` and `end` indices. |
-| `count(item)`                   | Returns the number of occurrences of the specified item.                                          |
-| `sort(key=None, reverse=False)` | Sorts the list in ascending order (or descending if `reverse=True`).                              |
-| `reverse()`                     | Reverses the order of the list.                                                                   |
-| `copy()`                        | Returns a shallow copy of the list.                                                               |
+| **Method**                      | **Description**                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------------- |
+| `append(item)`                  | Adds an item to the end of the list.                                            |
+| `insert(index, item)`           | Inserts an item at the specified index.                                         |
+| `remove(item)`                  | Removes the first occurrence of the specified item.                             |
+| `pop(index=-1)`                 | Removes and returns the item at the specified index (default is the last item). |
+| `clear()`                       | Removes all items from the list.                                                |
+| `sort(key=None, reverse=False)` | Sorts the list in ascending order (or descending if `reverse=True`).            |
+| `reverse()`                     | Reverses the order of the list.                                                 |
 
 ```python
 numbers = [5, 3, 8]
@@ -155,32 +151,6 @@ t2 = (3, 4)
 print(t1 + t2)  # Output: (1, 2, 3, 4)
 ```
 
-#### 2.2.4 Repetition ( `*` )
-
-You can repeat tuples using the `*` operator.
-
-```python
-print(t1 * 2)   # Output: (1, 2, 1, 2)
-```
-
-#### 2.2.5 Membership Testing
-
-Check if an item exists in a tuple using the `in` or `not in` operators.
-
-```python
-print(2 in t1)  # Output: True
-print(5 not in t2) # Output: True
-```
-
-#### 2.2.6 Iterating Through Tuples
-
-You can iterate through a tuple using a `for` loop.
-
-```python
-for item in t1:
-    print(item)
-```
-
 ### 2.3 Tuples Built-in Functions
 
 | **Function**  | **Description**                                                                                 |
@@ -191,11 +161,8 @@ for item in t1:
 | `sum()`       | Returns the sum of all elements in the tuple (only for numeric elements).                       |
 | `sorted()`    | Returns a sorted list of the tuple elements (does not modify the original tuple).               |
 | `tuple()`     | Converts an iterable (like a list, string, or range) into a tuple.                              |
-| `all()`       | Returns `True` if all elements in the tuple are `True` (or the tuple is empty).                 |
-| `any()`       | Returns `True` if at least one element in the tuple is `True`.                                  |
 | `enumerate()` | Returns an enumerate object that yields pairs of index and value for each element in the tuple. |
 | `reversed()`  | Returns a reverse iterator for the tuple.                                                       |
-| `zip()`       | Combines elements from multiple iterables into tuples.                                          |
 
 #### Notes:
 
@@ -204,19 +171,11 @@ for item in t1:
 
 ### 2.4 Special Features of Tuples
 
-| Feature                        | Description                                                                       |
-| ------------------------------ | --------------------------------------------------------------------------------- |
-| **Immutability**               | Tuples cannot be modified after creation, ensuring data integrity.                |
-| **Faster Than Lists**          | Tuples are faster due to immutability and fixed size.                             |
-| **Hashable**                   | Can be used as keys in dictionaries or elements in sets if elements are hashable. |
-| **Heterogeneous Data**         | Can store elements of different data types.                                       |
-| **Nested Tuples**              | Support for multi-level tuples.                                                   |
-| **Memory Efficient**           | Consume less memory compared to lists.                                            |
-| **Packing & Unpacking**        | Group multiple values or assign tuple elements to variables.                      |
-| **Basic Operations**           | Support indexing, slicing, concatenation, repetition, and membership testing.     |
-| **Readability**                | Often used to return multiple values from functions.                              |
-| **Immutable Constants**        | Ideal for storing fixed, unchanging data.                                         |
-| **Lexicographical Comparison** | Can be compared based on element order.                                           |
+- **Ordered**: Elements have a specific order.
+- **Immutable**: Cannot be modified after creation.
+- **Heterogeneous**: Can contain elements of different types.
+- **Hashable**: Can be used as keys in dictionaries or elements in sets if elements are hashable.
+- **Memory Efficient**: Consumes less memory compared to lists.
 
 ## 3. Dictionaries
 
@@ -304,19 +263,15 @@ These functions can be applied to dictionaries.
 
 These methods are specifically designed for dictionary objects.
 
-| **Method**                         | **Description**                                                                                           |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `dict.keys()`                      | Returns a view object containing all keys in the dictionary.                                              |
-| `dict.values()`                    | Returns a view object containing all values in the dictionary.                                            |
-| `dict.items()`                     | Returns a view object of key-value pairs as tuples.                                                       |
-| `dict.get(key[, default])`         | Returns the value associated with the key; if the key doesn't exist, returns the specified default value. |
-| `dict.update(other)`               | Updates the dictionary with key-value pairs from another dictionary or an iterable of pairs.              |
-| `dict.pop(key[, default])`         | Removes the key and returns its value; if the key doesn't exist, returns the default value.               |
-| `dict.popitem()`                   | Removes and returns the last inserted key-value pair (from Python 3.7+).                                  |
-| `dict.clear()`                     | Removes all key-value pairs from the dictionary.                                                          |
-| `dict.copy()`                      | Returns a shallow copy of the dictionary.                                                                 |
-| `dict.fromkeys(iterable[, value])` | Creates a new dictionary with keys from the iterable and values set to the specified value.               |
-| `dict.setdefault(key[, default])`  | Returns the value of the key if it exists; if not, inserts the key with the default value and returns it. |
+| **Method**                        | **Description**                                                                                           |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `dict.keys()`                     | Returns a view object containing all keys in the dictionary.                                              |
+| `dict.values()`                   | Returns a view object containing all values in the dictionary.                                            |
+| `dict.items()`                    | Returns a view object of key-value pairs as tuples.                                                       |
+| `dict.pop(key[, default])`        | Removes the key and returns its value; if the key doesn't exist, returns the default value.               |
+| `dict.clear()`                    | Removes all key-value pairs from the dictionary.                                                          |
+| `dict.copy()`                     | Returns a shallow copy of the dictionary.                                                                 |
+| `dict.setdefault(key[, default])` | Returns the value of the key if it exists; if not, inserts the key with the default value and returns it. |
 
 ### 3.5 Dictionary Keys
 
@@ -420,22 +375,17 @@ print(my_set)  # Output: {1, 2, 3, 4}
 
 ### 4.3 Common Set Methods
 
-| **Method**                  | **Description**                                                                  |
-| --------------------------- | -------------------------------------------------------------------------------- |
-| `add(element)`              | Adds a single element to the set.                                                |
-| `update(iterable)`          | Adds multiple elements (from an iterable) to the set.                            |
-| `remove(element)`           | Removes the specified element; raises `KeyError` if the element is not found.    |
-| `discard(element)`          | Removes the specified element without error if it’s not found.                   |
-| `pop()`                     | Removes and returns an arbitrary element; raises `KeyError` if the set is empty. |
-| `clear()`                   | Removes all elements from the set.                                               |
-| `union(set)`                | Returns a new set containing all elements from both sets.                        |
-| `intersection(set)`         | Returns a new set with elements common to both sets.                             |
-| `difference(set)`           | Returns a new set with elements in the first set but not in the second.          |
-| `symmetric_difference(set)` | Returns a new set with elements in either set, but not both.                     |
-| `issubset(set)`             | Checks if the set is a subset of another.                                        |
-| `issuperset(set)`           | Checks if the set is a superset of another.                                      |
-| `isdisjoint(set)`           | Checks if two sets have no elements in common.                                   |
-| `copy()`                    | Returns a shallow copy of the set.                                               |
+| **Method**          | **Description**                                                                  |
+| ------------------- | -------------------------------------------------------------------------------- |
+| `add(element)`      | Adds a single element to the set.                                                |
+| `remove(element)`   | Removes the specified element; raises `KeyError` if the element is not found.    |
+| `pop()`             | Removes and returns an arbitrary element; raises `KeyError` if the set is empty. |
+| `union(set)`        | Returns a new set containing all elements from both sets.                        |
+| `intersection(set)` | Returns a new set with elements common to both sets.                             |
+| `difference(set)`   | Returns a new set with elements in the first set but not in the second.          |
+| `issubset(set)`     | Checks if the set is a subset of another.                                        |
+| `issuperset(set)`   | Checks if the set is a superset of another.                                      |
+| `isdisjoint(set)`   | Checks if two sets have no elements in common.                                   |
 
 ### 4.4 Comparing Sets
 
